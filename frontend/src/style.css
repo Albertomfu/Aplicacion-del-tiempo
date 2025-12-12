@@ -9,6 +9,7 @@
   --card-bg: rgba(255, 255, 255, 0.035);
   --radius: 14px;
   --shadow: 0 8px 30px rgba(2, 6, 23, 0.6);
+  --placeholder: rgba(230, 238, 248, 0.3); /* para dark */
   font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto,
     "Helvetica Neue", Arial;
 }
@@ -20,8 +21,9 @@ html[data-theme="light"] {
   --accent2: #6b48ff;
   --text: #1a1a1a;
   --muted: #555;
-  --card-bg: rgba(255, 255, 255, 0.6);
+  --card-bg: rgba(220, 225, 235, 0.8); /* gris suave */
   --shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+  --placeholder: rgba(80, 80, 80, 0.5); /* más oscuro para light */
 }
 
 * {
@@ -170,7 +172,7 @@ body {
   outline: none;
 }
 #city-input::placeholder {
-  color: rgba(230, 238, 248, 0.3);
+  color: var(--placeholder);
 }
 
 .btn {
@@ -295,9 +297,7 @@ body {
   background-color: rgba(0, 0, 0, 0.2);
   padding: 4px;
 }
-html[data-theme="light"] .hourly-forecast img {
-  background-color: rgba(255, 255, 255, 0.4);
-}
+
 html[data-theme="dark"] .hourly-forecast img {
   background-color: rgba(0, 0, 0, 0.2);
 }
@@ -315,7 +315,11 @@ html[data-theme="dark"] .hourly-forecast img {
 }
 .card.small {
   padding: 12px;
+  background: var(--card-bg); /* << IMPORTANTE */
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(6px);
 }
+
 .card h3,
 .card h4 {
   margin: 0 0 8px 0;
@@ -352,7 +356,11 @@ html[data-theme="dark"] .hourly-forecast img {
     order: 1;
   }
   .panel {
-    padding: 18px;
+    /* padding: 18px; */
+    background: transparent; /* Que se vea el fondo completo */
+    border: none;
+    box-shadow: none;
+    padding: 28px 0; /* opcional: mantén el padding vertical */
   }
   .brand-text {
     display: none;
@@ -360,4 +368,16 @@ html[data-theme="dark"] .hourly-forecast img {
   .topbar-inner {
     padding: 10px 16px;
   }
+}
+
+a {
+  color: var(--accent1); /* Cian suave */
+  text-decoration: none; /* Sin subrayado */
+  font-weight: 500;
+  transition: 0.25s ease;
+}
+
+a:hover {
+  color: var(--accent2); /* Cambia a violeta al pasar el ratón */
+  text-shadow: 0 0 6px rgba(109, 211, 255, 0.4);
 }
