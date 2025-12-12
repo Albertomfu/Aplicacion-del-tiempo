@@ -74,26 +74,38 @@ Backend
 
 📁 Estructura del proyecto
 
-frontend/
-│── index.html
-│── politicaPrivacidad.html
-│── terminosYCondiciones.html
-│── script.js
-│── src/style.css
-│── img/
-│ ├── icons/
-│ └── favicon.png
+```
+clima-app-main
+├─ backend
+│  ├─ .env
+│  ├─ package-lock.json
+│  ├─ package.json
+│  └─ src
+│     ├─ app.js
+│     ├─ controllers
+│     │  └─ weather.controller.js
+│     ├─ routes
+│     │  └─ weather.routes.js
+│     └─ server.js
+├─ frontend
+│  ├─ img
+│  │  ├─ captura-busqueda.png
+│  │  ├─ captura-forecast1.png
+│  │  ├─ captura-forecast2.png
+│  │  ├─ captura-home.png
+│  │  └─ favicon
+│  │     └─ aplicacion-meteorologica (1).png
+│  ├─ index.html
+│  ├─ package-lock.json
+│  ├─ package.json
+│  ├─ politicaPrivacidad.html
+│  ├─ script.js
+│  ├─ src
+│  │  └─ style.css
+│  └─ terminosYCondiciones.html
+└─ README.md
 
-backend/
-│── controllers/
-│ └── weatherController.js
-│── routes/
-│ └── weatherRoutes.js
-│── server.js
-│── .env.example
-│── package.json
-
-README.md
+```
 
 ⚙️ Instalación y ejecución
 
