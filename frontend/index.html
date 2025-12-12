@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>App del Clima — Neumorphism & Glass</title>
+    <meta
+      name="description"
+      content="App de clima moderna con glassmorphism y pronóstico por horas y por días."
+    />
+    <link
+      rel="icon"
+      href="/frontend/img/aplicacion-meteorologica (1).png"
+      type="image/x-icon"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+
+    <link rel="stylesheet" href="/frontend/src/style.css" />
+
+    <meta property="og:title" content="App del Clima — Modern UI" />
+    <meta
+      property="og:description"
+      content="Clima actual y pronóstico con diseño glassmorphism."
+    />
+    <meta property="og:image" content="./img/portadaAppClima.png" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="topbar-inner">
+        <a
+          class="brand"
+          href="/frontend/index.html"
+          aria-label="Inicio - App del Clima"
+        >
+          <svg
+            class="brand-icon"
+            width="36"
+            height="36"
+            viewBox="0 0 24 24"
+            fill="none"
+            aria-hidden="true"
+          >
+            <defs>
+              <linearGradient id="g" x1="0" x2="1">
+                <stop offset="0" stop-color="#6dd3ff" />
+                <stop offset="1" stop-color="#8e6bff" />
+              </linearGradient>
+            </defs>
+            <path
+              d="M12 2a6 6 0 00-6 6 6 6 0 001.2 3.6A4 4 0 1017 14h.5A4.5 4.5 0 0012 2z"
+              fill="url(#g)"
+            />
+          </svg>
+          <span class="brand-text">App Clima</span>
+        </a>
+
+        <div class="topbar-actions">
+          <button id="theme-toggle" class="icon-btn" aria-label="Cambiar tema">
+            <svg
+              class="icon-svg"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              width="20"
+              height="20"
+            >
+              <path
+                fill="currentColor"
+                d="M21.75 13.01A9 9 0 1110.99 2.25a7 7 0 0010.76 10.76z"
+              />
+            </svg>
+          </button>
+
+          <a
+            class="contact"
+            href="mailto:AMFDeveloperP@hotmail.com"
+            aria-label="Contacto"
+          >
+            <svg
+              class="icon-svg"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              width="20"
+              height="20"
+            >
+              <path
+                fill="currentColor"
+                d="M2 4h20v16H2V4zm2 2v12h16V6H4zm8 5l8-5H4l8 5z"
+              />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <main class="page">
+      <section class="panel glass">
+        <div class="grid">
+          <div class="left-col">
+            <h1 class="title">Clima actual</h1>
+
+            <label class="visually-hidden" for="city-input"
+              >Buscar ciudad</label
+            >
+            <div class="search-wrap">
+              <input
+                id="city-input"
+                type="text"
+                placeholder="Escribe una ciudad..."
+                autocomplete="off"
+                aria-autocomplete="list"
+              />
+              <button id="search-btn" class="btn primary" aria-label="Buscar">
+                Buscar
+              </button>
+
+              <div
+                id="suggestions"
+                class="suggestions"
+                role="listbox"
+                aria-label="Sugerencias de ciudad"
+              ></div>
+            </div>
+
+            <div
+              id="weather-result"
+              class="weather-card"
+              aria-live="polite"
+            ></div>
+
+            <div id="forecast" class="forecast-grid" aria-live="polite"></div>
+          </div>
+
+          <aside class="right-col">
+            <!-- <div class="card glass small">
+              <h3>Clima rápido</h3>
+              <ul>
+                <li>Temperatura actual: <span id="quick-temp">--°C</span></li>
+                <li>Humedad: <span id="quick-humidity">--%</span></li>
+                <li>Viento: <span id="quick-wind">-- km/h</span></li>
+                <li>Condición: <span id="quick-condition">--</span></li>
+              </ul>
+            </div> -->
+
+            <div
+              class="card glass small cookie"
+              id="cookie-banner"
+              role="dialog"
+              aria-modal="false"
+              aria-hidden="true"
+            >
+              <p>
+                Usamos cookies para mejorar la experiencia.
+                <a href="/frontend/politicaPrivacidad.html"
+                  >Política de cookies</a
+                >
+              </p>
+              <div class="cookie-actions">
+                <button id="accept-cookies" class="btn primary small">
+                  Aceptar
+                </button>
+                <button id="cancel-cookies" class="btn ghost small">
+                  Cancelar
+                </button>
+              </div>
+            </div>
+
+            <div class="card glass small">
+              <h4>Enlaces</h4>
+              <nav>
+                <ul class="links">
+                  <li>
+                    <a href="/frontend/politicaPrivacidad.html">Política</a>
+                  </li>
+                  <li>
+                    <a href="/frontend/terminosYCondiciones.html">Términos</a>
+                  </li>
+                  <li><a href="/frontend/index.html">Inicio</a></li>
+                </ul>
+              </nav>
+            </div>
+          </aside>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>
+        &copy; <span id="year"></span> App del Clima — Alberto Molina de la
+        Fuente
+      </p>
+    </footer>
+
+    <script src="/frontend/script.js" defer></script>
+  </body>
+</html>

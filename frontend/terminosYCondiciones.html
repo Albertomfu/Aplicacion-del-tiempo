@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Términos y Condiciones — App del Clima</title>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+
+    <link rel="stylesheet" href="/frontend/src/style.css" />
+  </head>
+
+  <body>
+    <header class="topbar">
+      <div class="topbar-inner">
+        <a
+          class="brand"
+          href="/frontend/index.html"
+          aria-label="Inicio - App del Clima"
+        >
+          <svg
+            class="brand-icon"
+            width="36"
+            height="36"
+            viewBox="0 0 24 24"
+            fill="none"
+            aria-hidden="true"
+          >
+            <defs>
+              <linearGradient id="g" x1="0" x2="1">
+                <stop offset="0" stop-color="#6dd3ff" />
+                <stop offset="1" stop-color="#8e6bff" />
+              </linearGradient>
+            </defs>
+            <path
+              d="M12 2a6 6 0 00-6 6 6 6 0 001.2 3.6A4 4 0 1017 14h.5A4.5 4.5 0 0012 2z"
+              fill="url(#g)"
+            />
+          </svg>
+          <span class="brand-text">App Clima</span>
+        </a>
+
+        <div class="topbar-actions">
+          <button
+            id="theme-toggle"
+            class="icon-btn"
+            title="Cambiar tema"
+            aria-pressed="false"
+          >
+            <i class="fas fa-moon"></i>
+          </button>
+          <a
+            class="contact"
+            href="mailto:AMFDeveloperP@hotmail.com"
+            aria-label="Contacto"
+          >
+            <i class="fas fa-envelope"></i>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <main class="page">
+      <section class="panel glass">
+        <h1 class="title">Términos y Condiciones</h1>
+        <p>
+          <strong>Última actualización:</strong> <span id="fecha-actual"></span>
+        </p>
+
+        <div class="section-title">1. Aceptación de los términos</div>
+        <ul>
+          <li>
+            Al acceder y usar este sitio web o la aplicación, aceptas estar
+            sujeto a estos Términos y Condiciones.
+          </li>
+        </ul>
+
+        <div class="section-title">2. Uso de la aplicación</div>
+        <ul>
+          <li>
+            Esta aplicación está destinada para uso personal y no comercial.
+          </li>
+        </ul>
+
+        <div class="section-title">3. Privacidad y recopilación de datos</div>
+        <ul>
+          <li>
+            Recopilamos información personal para ofrecerte una experiencia más
+            personalizada.
+          </li>
+        </ul>
+
+        <div class="section-title">4. Responsabilidad</div>
+        <ul>
+          <li>
+            No nos hacemos responsables de los daños derivados del uso de la
+            aplicación.
+          </li>
+        </ul>
+
+        <div class="section-title">5. Cambios en los términos</div>
+        <ul>
+          <li>
+            Nos reservamos el derecho de modificar estos términos en cualquier
+            momento.
+          </li>
+        </ul>
+
+        <div class="section-title">6. Contacto</div>
+        <ul>
+          <li>
+            Si tienes preguntas sobre estos Términos y Condiciones, contáctanos
+            en: <strong>AMFDeveloperP@hotmail.com</strong>
+          </li>
+        </ul>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>
+        &copy; <span id="year"></span> App del Clima — Hecho con
+        <i class="fas fa-heart" style="color: #ff6b6b"></i>
+      </p>
+    </footer>
+
+    <script>
+      function obtenerFechaActual() {
+        const fecha = new Date();
+        const opciones = { year: "numeric", month: "long", day: "numeric" };
+        return fecha.toLocaleDateString("es-ES", opciones);
+      }
+      document.getElementById("fecha-actual").textContent =
+        obtenerFechaActual();
+    </script>
+  </body>
+</html>

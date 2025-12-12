@@ -1,0 +1,13 @@
+# Ignorar el archivo .env
+.env
+
+# Ignorar módulos de Node.js
+node_modules/
+
+# Ignorar archivos de logs
+logs/
+*.log
+npm-debug.log*
+
+# Ignorar el archivo de config.js donde esta la clave api
+config.js
