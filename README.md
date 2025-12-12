@@ -48,10 +48,10 @@ Consulta el clima actual y el pronóstico extendido utilizando una API backend q
 
 🖼️ Capturas de pantalla
 
-/img/captura-home.png
-/img/captura-forecast1.png
-/img/captura-forecast2.png
-/img/captura-busqueda.png
+![Pantalla de inicio](frontend/img/captura-home.png)
+![Búsqueda de ciudad](frontend/img/captura-busqueda.png)
+![Pronóstico diario 1](frontend/img/captura-forecast1.png)
+![Pronóstico diario 2](frontend/img/captura-forecast2.png)
 
 🛠️ Tecnologías utilizadas
 
